@@ -5,7 +5,6 @@ export const parseVideoDuration = (duration: string): string => {
     .replace("M", ":")
     .replace("S", "")
     .split(":");
-
   if (durationParts.length === 3) {
     return `${durationParts[0]}:${
       parseInt(durationParts[1]) < 9 ? `0${durationParts[1]}` : durationParts[1]
