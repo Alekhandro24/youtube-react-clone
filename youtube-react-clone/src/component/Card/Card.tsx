@@ -11,9 +11,9 @@ const Card = ({ data }: { data: HomePageVideos }) => {
         </span>
         <Link to={`/watch/${data.videoId}`}>
           <img
-            src={data?.videoThumbnail}
+            src={data.videoThumbnail}
+            className="h-44 w-72"
             alt="thumbnail"
-            className="h-44 w-72 "
           />
         </Link>
       </div>
@@ -39,12 +39,12 @@ const Card = ({ data }: { data: HomePageVideos }) => {
                 {data.channelInfo.name}
               </a>
             </div>
-          </div>
-          <div>
-            <span className="after:content-['•'] after:mx-1">
-              {data.videoViews} views
-            </span>
-            <span>{data.videoAge}</span>
+            <div>
+              <span className="after:content-['•'] after:mx-1">
+                {data.videoViews} views
+              </span>
+              <span>{data.videoAge}</span>
+            </div>
           </div>
         </div>
       </div>
