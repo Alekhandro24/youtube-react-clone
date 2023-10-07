@@ -2,7 +2,7 @@
   "name": "youtube-react-clone",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Alekhandro24.github.io/youtube-react-clone/",
+  "homepage": "https://Alekhandro24.github.io/youtube-react-clone/youtube-react-clone/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.6",
     "@tailwindcss/line-clamp": "^0.4.4",
