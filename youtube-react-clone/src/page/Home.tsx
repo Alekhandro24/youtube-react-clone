@@ -7,10 +7,17 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Spinner from "../component/Spinner/Spinner";
 import { HomePageVideos } from "../Types";
 import Card from "../component/Card/Card";
+import { clearVideos } from "../redux/store";
 
 const Home = () => {
   const dispatch = useAppDispatch();
   const videos = useAppSelector((state) => state.youtubeApp.videos);
+
+  useEffect(() => {
+    return () => {
+      dispatch(clearVideos());
+    };
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getHomePageVideos(false));
@@ -31,7 +38,7 @@ const Home = () => {
             loader={<Spinner />}
             height={650}
           >
-            <div className="grid gap-y-14 gap-x-8 grid-cols-4 p-4">
+            <div className="grid gap-y-14 gap-x-8 grid-cols-4 p-8">
               {videos.map((item: HomePageVideos) => {
                 return <Card data={item} key={item.videoId} />;
               })}
