@@ -1,4 +1,3 @@
 # youtube-react-clone
 
-youtube-react-clone
-\*some github hh
+youtube-react-clone \*some github hh hh
