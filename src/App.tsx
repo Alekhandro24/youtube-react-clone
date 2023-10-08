@@ -1,8 +1,8 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Home from "./page/Home";
-import Search from "./page/Search";
-import Watch from "./page/Watch";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Home from './page/Home';
+import Search from './page/Search';
+import Watch from './page/Watch';
 
 const App = () => {
   return (
