@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { RecommendedVideos } from "../../Types";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { RecommendedVideos } from '../../Types';
 
 const WatchCard = ({ data }: { data: RecommendedVideos }) => {
   return (
