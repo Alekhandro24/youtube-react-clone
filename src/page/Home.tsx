@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
-import Navbar from "../component/Navbar/Navbar";
-import Sidebar from "../component/Sidebar/Sidebar";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { getHomePageVideos } from "../redux/reducers/getHomePageVideos";
-import InfiniteScroll from "react-infinite-scroll-component";
-import Spinner from "../component/Spinner/Spinner";
-import { HomePageVideos } from "../Types";
-import Card from "../component/Card/Card";
-import { clearVideos } from "../redux/store";
+import React, { useEffect } from 'react';
+import Navbar from '../component/Navbar/Navbar';
+import Sidebar from '../component/Sidebar/Sidebar';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { getHomePageVideos } from '../redux/reducers/getHomePageVideos';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import Spinner from '../component/Spinner/Spinner';
+import { HomePageVideos } from '../Types';
+import Card from '../component/Card/Card';
+import { clearVideos } from '../redux/store';
 
 const Home = () => {
   const dispatch = useAppDispatch();
-  const videos = useAppSelector((state) => state.youtubeApp.videos);
+  const videos = useAppSelector(state => state.youtubeApp.videos);
 
   useEffect(() => {
     return () => {
@@ -25,10 +25,10 @@ const Home = () => {
 
   return (
     <div className="max-h-screen overflow-hidden">
-      <div style={{ height: "7.5vh" }}>
+      <div style={{ height: '7.5vh' }}>
         <Navbar />
       </div>
-      <div className="flex" style={{ height: "92.5vh" }}>
+      <div className="flex" style={{ height: '92.5vh' }}>
         <Sidebar />
         {videos.length ? (
           <InfiniteScroll
