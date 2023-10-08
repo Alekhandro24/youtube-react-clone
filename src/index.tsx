@@ -11,10 +11,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/youtube-react-clone">
-      <Provider store={store}>
+    <Provider store={store}>
+      <BrowserRouter basename="/youtube-react-clone">
         <App />
-      </Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
