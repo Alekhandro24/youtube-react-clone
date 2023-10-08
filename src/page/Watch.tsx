@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { getVideoDetails } from "../redux/reducers/getVideoDetails";
-import { getRecommendedVideos } from "../redux/reducers/getRecommendedVideos";
-import Navbar from "../component/Navbar/Navbar";
-import WatchCard from "../component/WatchCard/WatchCard";
-import { BsThreeDots } from "react-icons/bs";
-import { MdOutlinePlaylistAdd } from "react-icons/md";
-import { FaShare } from "react-icons/fa";
-import { BiLike, BiDislike } from "react-icons/bi";
-import { HiScissors } from "react-icons/hi";
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { getVideoDetails } from '../redux/reducers/getVideoDetails';
+import { getRecommendedVideos } from '../redux/reducers/getRecommendedVideos';
+import Navbar from '../component/Navbar/Navbar';
+import WatchCard from '../component/WatchCard/WatchCard';
+import { BsThreeDots } from 'react-icons/bs';
+import { MdOutlinePlaylistAdd } from 'react-icons/md';
+import { FaShare } from 'react-icons/fa';
+import { BiLike, BiDislike } from 'react-icons/bi';
+import { HiScissors } from 'react-icons/hi';
 
 const Watch = () => {
   const [showMoreStatus, setShowMoreStatus] = useState<boolean>(false);
@@ -17,10 +17,10 @@ const Watch = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const currentPlaying = useAppSelector(
-    (state) => state.youtubeApp.currentPlaying
+    state => state.youtubeApp.currentPlaying
   );
   const recommendedVideos = useAppSelector(
-    (state) => state.youtubeApp.recommendedVideos
+    state => state.youtubeApp.recommendedVideos
   );
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Watch = () => {
       dispatch(getVideoDetails(id));
       setShowMoreStatus(false);
     } else {
-      navigate("/");
+      navigate('/');
     }
   }, [id, navigate, dispatch]);
 
@@ -40,12 +40,12 @@ const Watch = () => {
     <>
       {currentPlaying && currentPlaying?.videoId === id && (
         <div className="max-h-screen overflow-hidden">
-          <div style={{ height: "7.5vh" }}>
+          <div style={{ height: '7.5vh' }}>
             <Navbar />
           </div>
-          <div className="flex w-full" style={{ height: "92.5vh" }}>
+          <div className="flex w-full" style={{ height: '92.5vh' }}>
             <div className="flex gap-y-10 gap-x-5 p-7 mx-20 mr-0 w-full overflow-auto">
-              <div style={{ maxWidth: "800px" }}>
+              <div style={{ maxWidth: '800px' }}>
                 <div>
                   <iframe
                     width="800"
@@ -116,7 +116,7 @@ const Watch = () => {
                       </div>
                       <div
                         className={`${
-                          !showMoreStatus ? "max-h-16 overflow-hidden" : ""
+                          !showMoreStatus ? 'max-h-16 overflow-hidden' : ''
                         } text-sm w-11/12`}
                       >
                         <pre
@@ -133,7 +133,7 @@ const Watch = () => {
                           className="uppercase text-sm cursor-pointer"
                           onClick={() => setShowMoreStatus(!showMoreStatus)}
                         >
-                          Show {showMoreStatus ? "less" : "more"}
+                          Show {showMoreStatus ? 'less' : 'more'}
                         </button>
                       </div>
                     </div>
@@ -142,7 +142,7 @@ const Watch = () => {
               </div>
               <div className="mr-24 flex flex-col gap-3">
                 {getRecommendedVideos.length &&
-                  recommendedVideos.map((item) => {
+                  recommendedVideos.map(item => {
                     return <WatchCard data={item} key={item.videoId} />;
                   })}
               </div>
