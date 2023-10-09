@@ -1,14 +1,14 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { RootState } from "../store";
-import axios from "axios";
-import { YOUTUBE_API_URL } from "../../utils/constants";
-import { parseRecommendedData } from "../../utils";
-import { RecommendedVideos } from "../../Types";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { RootState } from '../store';
+import axios from 'axios';
+import { YOUTUBE_API_URL } from '../../utils/constants';
+import { parseRecommendedData } from '../../utils';
+import { RecommendedVideos } from '../../Types';
 
 const API_KEY = process.env.REACT_APP_YOUTUBE_DATA_API_KEY;
 
 export const getRecommendedVideos = createAsyncThunk(
-  "yotubeApp/getRecommendedVideos",
+  'yotubeApp/getRecommendedVideos',
   async (videoId: string, { getState }) => {
     const {
       youtubeApp: {
