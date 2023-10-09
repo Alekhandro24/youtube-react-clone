@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   MdHomeFilled,
   MdOutlineSlowMotionVideo,
@@ -13,108 +13,108 @@ import {
   MdOutlineHelpOutline,
   MdOutlineFeedback,
   MdOutlineSportsVolleyball,
-} from "react-icons/md";
-import { TbMusic, TbDeviceGamepad2 } from "react-icons/tb";
-import { FaRegCompass } from "react-icons/fa";
-import { GiFilmStrip } from "react-icons/gi";
+} from 'react-icons/md';
+import { TbMusic, TbDeviceGamepad2 } from 'react-icons/tb';
+import { FaRegCompass } from 'react-icons/fa';
+import { GiFilmStrip } from 'react-icons/gi';
 
 const Sidebar = () => {
   const mainLinks = [
     {
       icon: <MdHomeFilled className="text-xl" />,
-      name: "Home",
+      name: 'Home',
     },
     {
       icon: <FaRegCompass className="text-xl" />,
-      name: "Explore",
+      name: 'Explore',
     },
     {
       icon: <MdOutlineSlowMotionVideo className="text-xl" />,
-      name: "Shorts",
+      name: 'Shorts',
     },
     {
       icon: <MdSubscriptions className="text-xl" />,
-      name: "Subscriptions",
+      name: 'Subscriptions',
     },
   ];
 
   const secondaryLinks = [
     {
       icon: <MdOutlineVideoLibrary className="text-xl" />,
-      name: "Library",
+      name: 'Library',
     },
     {
       icon: <MdHistory className="text-xl" />,
-      name: "History",
+      name: 'History',
     },
     {
       icon: <MdOutlineSmartDisplay className="text-xl" />,
-      name: "Your Videos",
+      name: 'Your Videos',
     },
     {
       icon: <MdOutlineWatchLater className="text-xl" />,
-      name: "Watch Later",
+      name: 'Watch Later',
     },
     {
       icon: <MdThumbUpOffAlt className="text-xl" />,
-      name: "Liked Videos",
+      name: 'Liked Videos',
     },
   ];
 
   const subscriptionLinks = [
     {
       icon: <TbMusic className="text-xl" />,
-      name: "Music",
+      name: 'Music',
     },
     {
       icon: <MdOutlineSportsVolleyball className="text-xl" />,
-      name: "Sport",
+      name: 'Sport',
     },
     {
       icon: <TbDeviceGamepad2 className="text-xl" />,
-      name: "Gaming",
+      name: 'Gaming',
     },
     {
       icon: <GiFilmStrip className="text-xl" />,
-      name: "Films",
+      name: 'Films',
     },
   ];
 
   const helpLinks = [
     {
       icon: <MdSettings className="text-xl" />,
-      name: "Settings",
+      name: 'Settings',
     },
     {
       icon: <MdOutlinedFlag className="text-xl" />,
-      name: "Report history",
+      name: 'Report history',
     },
     {
       icon: <MdOutlineHelpOutline className="text-xl" />,
-      name: "Help",
+      name: 'Help',
     },
     {
       icon: <MdOutlineFeedback className="text-xl" />,
-      name: "Send feedback",
+      name: 'Send feedback',
     },
   ];
 
   const textLinks = [
     [
-      "About",
-      "Press",
-      "Copyright",
-      "Contact us",
-      "Creator",
-      "Advertise",
-      "Developers",
+      'About',
+      'Press',
+      'Copyright',
+      'Contact us',
+      'Creator',
+      'Advertise',
+      'Developers',
     ],
     [
-      "Terms",
-      "Privacy",
-      "Policy & Safety",
-      "How YouTube works",
-      "Test new features",
+      'Terms',
+      'Privacy',
+      'Policy & Safety',
+      'How YouTube works',
+      'Test new features',
     ],
   ];
 
@@ -126,7 +126,7 @@ const Sidebar = () => {
             <li
               key={name}
               className={`pl-6 py-3 hover:bg-zinc-600 ${
-                name === "Home" ? "bg-slate-600" : ""
+                name === 'Home' ? 'bg-slate-600' : ''
               }`}
             >
               <a href="#" className="flex items-center gap-5">
@@ -174,12 +174,12 @@ const Sidebar = () => {
         })}
       </ul>
       <ul className="flex gap-2 flex-wrap text-sm p-4 text-zinc-400">
-        {textLinks[0].map((name) => {
+        {textLinks[0].map(name => {
           return <li key={name}>{name}</li>;
         })}
       </ul>
       <ul className="flex gap-2 flex-wrap text-sm p-4 text-zinc-400">
-        {textLinks[1].map((name) => {
+        {textLinks[1].map(name => {
           return <li key={name}>{name}</li>;
         })}
       </ul>
