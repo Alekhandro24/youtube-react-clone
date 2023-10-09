@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 import {
   convertRawViewstoString,
   parseVideoDuration,
   timeSince,
-} from "./index";
-import { YOUTUBE_API_URL } from "./constants";
-import { HomePageVideos } from "../Types";
+} from './index';
+import { YOUTUBE_API_URL } from './constants';
+import { HomePageVideos } from '../Types';
 
 const API_KEY = process.env.REACT_APP_YOUTUBE_DATA_API_KEY;
 
@@ -24,7 +24,7 @@ export const parseData = async (items: any[]) => {
       data: { items: channelsData },
     } = await axios.get(
       `${YOUTUBE_API_URL}/channels?part=snippet,contentDetails&id=${channelIds.join(
-        ","
+        ','
       )}&key=${API_KEY}`
     );
 
@@ -44,7 +44,7 @@ export const parseData = async (items: any[]) => {
       data: { items: videosData },
     } = await axios.get(
       `${YOUTUBE_API_URL}/videos?part=contentDetails,statistics&id=${videoIds.join(
-        ","
+        ','
       )}&key=${API_KEY}`
     );
     const parsedData: HomePageVideos[] = [];
@@ -64,7 +64,7 @@ export const parseData = async (items: any[]) => {
         index: number
       ) => {
         const { image: channelImage } = parsedChannelsData.find(
-          (data) => data.id === item.snippet.channelId
+          data => data.id === item.snippet.channelId
         )!;
         if (channelImage)
           parsedData.push({
