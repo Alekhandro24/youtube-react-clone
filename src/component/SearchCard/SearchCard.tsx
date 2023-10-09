@@ -1,6 +1,6 @@
-import React from "react";
-import { HomePageVideos } from "../../Types";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { HomePageVideos } from '../../Types';
+import { Link } from 'react-router-dom';
 
 const SearchCard = ({ data }: { data: HomePageVideos }) => {
   return (
