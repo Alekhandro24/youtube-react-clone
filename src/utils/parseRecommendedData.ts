@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 import {
   timeSince,
   convertRawViewstoString,
   parseVideoDuration,
-} from "./index";
-import { YOUTUBE_API_URL } from "./constants";
-import { Item, RecommendedVideos } from "../Types";
+} from './index';
+import { YOUTUBE_API_URL } from './constants';
+import { Item, RecommendedVideos } from '../Types';
 
 const API_KEY = process.env.REACT_APP_YOUTUBE_DATA_API_KEY;
 
@@ -26,7 +26,7 @@ export const parseRecommendedData = async (items: Item[], videoId: string) => {
       data: { items: videosData },
     } = await axios.get(
       `${YOUTUBE_API_URL}/videos?part=contentDetails,statistics&id=${videoIds.join(
-        ","
+        ','
       )}&key=${API_KEY}`
     );
 
