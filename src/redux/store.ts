@@ -1,35 +1,35 @@
-import { InitialState } from "../Types";
-import { createSlice, configureStore, PayloadAction } from "@reduxjs/toolkit";
-import { getHomePageVideos } from "./reducers/getHomePageVideos";
-import { getSearchPageVideos } from "./reducers/getSearchPageVideos";
-import { getRecommendedVideos } from "./reducers/getRecommendedVideos";
-import { getVideoDetails } from "./reducers/getVideoDetails";
+import { InitialState } from '../Types';
+import { createSlice, configureStore, PayloadAction } from '@reduxjs/toolkit';
+import { getHomePageVideos } from './reducers/getHomePageVideos';
+import { getSearchPageVideos } from './reducers/getSearchPageVideos';
+import { getRecommendedVideos } from './reducers/getRecommendedVideos';
+import { getVideoDetails } from './reducers/getVideoDetails';
 
 const initialState: InitialState = {
   videos: [],
   currentPlaying: null,
-  searchTerm: "",
+  searchTerm: '',
   searchResults: [],
   nextPageToken: null,
   recommendedVideos: [],
 };
 
 const YoutubeSlice = createSlice({
-  name: "youtubeApp",
+  name: 'youtubeApp',
   initialState,
   reducers: {
-    clearVideos: (state) => {
+    clearVideos: state => {
       state.videos = [];
       state.nextPageToken = null;
     },
     changeSearchTerm: (state, action: PayloadAction<string>) => {
       state.searchTerm = action.payload;
     },
-    clearSearchTerm: (state) => {
-      state.searchTerm = "";
+    clearSearchTerm: state => {
+      state.searchTerm = '';
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder
       .addCase(getHomePageVideos.fulfilled, (state, action) => {
         state.videos = action.payload.parsedData;
