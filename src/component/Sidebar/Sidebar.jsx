@@ -119,7 +119,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-2/12 bg-[#212121] pr-5 overflow-auto pb-8 sidebar">
+    <div className="w-2/12 bg-[#212121] pr-5 overflow-auto pb-8 pt-8 sidebar">
       <ul className="flex flex-col border-b-2 border-gray-700">
         {mainLinks.map(({ icon, name }) => {
           return (
@@ -183,7 +183,7 @@ const Sidebar = () => {
           return <li key={name}>{name}</li>;
         })}
       </ul>
-      <span className="px-4 text-sm text-zinc-400">&copy; 2023 Google</span>
+      <span className="px-4 text-sm text-zinc-400">&copy; 2022 Google</span>
       <br />
       <p className="px-4 pt-3 text-sm text-zinc-400">
         This clone is for educational purpose only.
