@@ -85,7 +85,7 @@ const Navbar = () => {
           </span>
         </div>
         <img
-          src="https://www.svgrepo.com/show/13671/youtube.svg"
+          src="https://icons.iconarchive.com/icons/graphics-vibe/classic-3d-social/256/youtube-icon.png"
           className="w-9 h-9 rounded-full"
           alt="logo"
         />
